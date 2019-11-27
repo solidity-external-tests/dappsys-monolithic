@@ -60,6 +60,7 @@ contract DSRoles is DSAuth, DSAuthority
 
     function hasUserRole(address who, uint8 role)
         public
+        virtual
         view
         returns (bool)
     {
@@ -70,6 +71,8 @@ contract DSRoles is DSAuth, DSAuthority
 
     function canCall(address caller, address code, bytes4 sig)
         public
+        virtual
+        override
         view
         returns (bool)
     {
@@ -95,6 +98,7 @@ contract DSRoles is DSAuth, DSAuthority
 
     function setUserRole(address who, uint8 role, bool enabled)
         public
+        virtual
         auth
     {
         bytes32 last_roles = _user_roles[who];
