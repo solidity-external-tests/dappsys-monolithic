@@ -28,7 +28,7 @@ import "./note.sol";
 contract DSProxy is DSAuth, DSNote {
     DSProxyCache public cache;  // global cache for contracts
 
-    constructor(address _cacheAddr) public {
+    constructor(address _cacheAddr) {
         setCache(_cacheAddr);
     }
 
@@ -98,7 +98,7 @@ contract DSProxyFactory {
     mapping(address=>bool) public isProxy;
     DSProxyCache public cache;
 
-    constructor() public {
+    constructor() {
         cache = new DSProxyCache();
     }
 

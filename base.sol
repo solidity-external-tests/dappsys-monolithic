@@ -25,7 +25,7 @@ contract DSTokenBase is ERC20, DSMath {
     mapping (address => uint256)                       _balances;
     mapping (address => mapping (address => uint256))  _approvals;
 
-    constructor(uint supply) public {
+    constructor(uint supply) {
         _balances[msg.sender] = supply;
         _supply = supply;
     }
