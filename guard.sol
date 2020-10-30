@@ -34,7 +34,7 @@ contract DSGuardEvents {
 }
 
 contract DSGuard is DSAuth, DSAuthority, DSGuardEvents {
-    bytes32 constant public ANY = bytes32(uint(-1));
+    bytes32 constant public ANY = bytes32(type(uint).max);
 
     mapping (bytes32 => mapping (bytes32 => mapping (bytes32 => bool))) acl;
 
